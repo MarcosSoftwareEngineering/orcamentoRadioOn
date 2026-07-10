@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - M.S.E.</title>
+
+    <!-- Favicon usando a própria logo -->
+    <link rel="icon" type="image/png" href="img/LogoOrcamento.png">
+
+    <!-- Open Graph / Twitter Card: faz a imagem aparecer junto do link
+         quando compartilhado no WhatsApp, Slack, Telegram, etc. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Proposta Comercial - Marcos Software Engineer">
+    <meta property="og:description" content="Gestão & Streaming de Rádio Online — implantação e suporte técnico completo.">
+    <meta property="og:image" content="img/LogoOrcamento.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Proposta Comercial - Marcos Software Engineer">
+    <meta name="twitter:description" content="Gestão & Streaming de Rádio Online — implantação e suporte técnico completo.">
+    <meta name="twitter:image" content="img/LogoOrcamento.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bibliotecas (Confete e PDF) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Garante que o fundo do body não interfira na captura */
+        body { background-color: #0f172a; }
+
+        /* Classe temporária aplicada apenas no momento de gerar o PDF */
+        .pdf-export-mode {
+            margin: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            max-width: 100% !important;
+            width: 800px !important; /* Força uma largura fixa perfeita para A4 */
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased selection:bg-sky-500 selection:text-white flex justify-center">
+
+    <!-- Container ajustado: max-w-3xl para ficar mais proporcional ao A4 -->
+    <main id="proposta-container" class="w-full max-w-3xl my-10 p-8 bg-slate-800 rounded-2xl shadow-2xl border border-slate-700">
+
+        <!-- Cabeçalho (logo + título à esquerda, dados do cliente à direita) -->
+        <header class="flex justify-between items-end border-b border-slate-700 pb-4 mb-6">
+            <div class="flex items-center gap-3">
+                <img src="img/LogoOrcamento.png" alt="Logo Marcos Software Engineer" class="h-12 w-auto">
+                <div>
+                    <h1 class="text-2xl font-black text-white tracking-tight">PROPOSTA COMERCIAL</h1>
+                    <p class="text-sky-400 font-medium text-sm mt-1">Gestão & Streaming de Rádio Online</p>
+                </div>
+            </div>
+            <div class="text-right text-sm">
+                <p class="font-bold text-white">Marcos Software Engineer (M.S.E.)</p>
+                <p id="current-date" class="text-xs text-slate-400 mt-1"></p>
+                <p class="mt-2 text-slate-400 text-xs">Para: <strong class="text-white text-sm">Paulo Reis</strong></p>
+            </div>
+        </header>
+
+        <!-- 1. Escopo -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                1. Escopo do Projeto
+            </h2>
+            <p class="mb-4 text-sm leading-relaxed text-slate-400">Implementação e gestão técnica completa da rádio online da sua empresa, focada em alta disponibilidade (uptime) e excelência na transmissão de áudio.</p>
+
+            <div class="grid grid-cols-3 gap-3">
+                <div class="p-4 bg-slate-700/50 rounded-xl border border-slate-600/50">
+                    <h3 class="font-bold text-sky-400 text-sm mb-1">🚀 Setup Inicial</h3>
+                    <p class="text-xs text-slate-300">Servidor AzuraCast, domínio, SSL e integração do player.</p>
+                </div>
+                <div class="p-4 bg-slate-700/50 rounded-xl border border-slate-600/50">
+                    <h3 class="font-bold text-sky-400 text-sm mb-1">☁️ Infraestrutura</h3>
+                    <p class="text-xs text-slate-300">Hospedagem VPS de alta performance e monitoramento 24/7.</p>
+                </div>
+                <div class="p-4 bg-slate-700/50 rounded-xl border border-slate-600/50">
+                    <h3 class="font-bold text-sky-400 text-sm mb-1">🛠️ Suporte M.S.E.</h3>
+                    <p class="text-xs text-slate-300">Manutenção técnica e suporte direto com o desenvolvedor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Investimento -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                2. Investimento
+            </h2>
+
+            <div class="overflow-hidden rounded-xl border border-slate-600">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-slate-700 text-white">
+                        <tr>
+                            <th class="p-3 font-semibold">Item</th>
+                            <th class="p-3 font-semibold">Descrição</th>
+                            <th class="p-3 font-semibold text-right">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700 bg-slate-800">
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="p-3 font-medium text-white">Implantação (Setup)</td>
+                            <td class="p-3 text-slate-400 text-xs">Configuração do servidor, painel e design do player.</td>
+                            <td class="p-3 font-bold text-right text-sky-400">R$ 400,00 <span class="block text-[10px] font-normal text-slate-500">(Taxa Única)</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="p-3 font-medium text-white">Mensalidade</td>
+                            <td class="p-3 text-slate-400 text-xs">Infraestrutura VPS dedicada, hospedagem e suporte.</td>
+                            <td class="p-3 font-bold text-right text-sky-400">R$ 160,00 <span class="block text-[10px] font-normal text-slate-500">(/ mês)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. Diferenciais & Considerações (Agrupados para economizar espaço) -->
+        <section class="mb-4 grid grid-cols-2 gap-6">
+            <div>
+                <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Diferenciais
+                </h2>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><strong class="text-sky-400">Estabilidade:</strong> Infraestrutura dedicada de alta performance.</li>
+                    <li><strong class="text-sky-400">Painel Próprio:</strong> Acesso total ao gerenciamento da rádio.</li>
+                    <li><strong class="text-sky-400">Suporte Direto:</strong> Atendimento sem robôs ou tickets lentos.</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Considerações
+                </h2>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><strong class="text-white">Direitos Autorais:</strong> O licenciamento de músicas (ECAD) é responsabilidade da contratante.</li>
+                    <li><strong class="text-white">Prazo:</strong> Operação em até <strong>[X] dias úteis</strong> após aprovação.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Assinatura -->
+        <footer class="mt-6 pt-4 border-t border-slate-700 flex justify-between items-center">
+            <div>
+                <p class="font-bold text-white">Marcos Vinícius Souza Silva</p>
+                <p class="text-xs text-sky-400">Software Engineer & Web Developer</p>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div id="action-buttons" class="flex gap-3">
+                <button id="btn-pdf" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white border border-slate-600 hover:border-sky-500 hover:bg-slate-700 transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Gerar PDF
+                </button>
+                <button id="btn-aprovar" class="px-5 py-2 bg-sky-500 hover:bg-sky-400 text-white text-sm rounded-lg font-bold shadow-lg shadow-sky-500/30 transition-all flex items-center gap-2 hover:scale-105 active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Aprovar Proposta
+                </button>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Preencher a data
+            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = new Date().toLocaleDateString('pt-BR', dateOptions);
+
+            // 2. Lógica de Geração do PDF (Refatorada)
+            const btnPdf = document.getElementById('btn-pdf');
+            btnPdf.addEventListener('click', () => {
+                const element = document.getElementById('proposta-container');
+                const actionButtons = document.getElementById('action-buttons');
+
+                // Prepara a tela para o PDF perfeito (Resolve o bug do espaço preto no topo)
+                window.scrollTo(0, 0);
+                actionButtons.style.display = 'none';
+                element.classList.add('pdf-export-mode'); // Aplica CSS fixo para A4
+
+                const opt = {
+                    margin:       0, // Zero margens para preencher a folha
+                    filename:     'Proposta_MSE_Radio.pdf',
+                    image:        { type: 'jpeg', quality: 1 },
+                    html2canvas:  {
+                        scale: 2,
+                        scrollY: 0, // Resolve o gap do scroll superior
+                        backgroundColor: '#1e293b' // Garante a cor de fundo Dark
+                    },
+                    // Configuração ajustada para encaixar em 1 página
+                    jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' }
+                };
+
+                // Gera e depois restaura o layout original da tela
+                html2pdf().set(opt).from(element).save().then(() => {
+                    element.classList.remove('pdf-export-mode');
+                    actionButtons.style.display = 'flex';
+                });
+            });
+
+            // 3. Lógica de Aprovação e Fogos de Artifício (Mantida)
+            const btnAprovar = document.getElementById('btn-aprovar');
+            btnAprovar.addEventListener('click', function() {
+                this.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Aprovada!`;
+                this.classList.replace('bg-sky-500', 'bg-emerald-500');
+                this.classList.replace('hover:bg-sky-400', 'hover:bg-emerald-400');
+                this.classList.replace('shadow-sky-500/30', 'shadow-emerald-500/50');
+                dispararFogos();
+            });
+
+            function dispararFogos() {
+                const duration = 3 * 1000;
+                const end = Date.now() + duration;
+
+                (function frame() {
+                    confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#0ea5e9', '#38bdf8', '#10b981', '#ffffff'] });
+                    confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#0ea5e9', '#38bdf8', '#10b981', '#ffffff'] });
+                    if (Date.now() < end) requestAnimationFrame(frame);
+                }());
+            }
+        });
+    </script>
+</body>
+</html>
